@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { render, act, fireEvent } from "@testing-library/react";
 import App from "../test1";
 
-test("Just show item b", async () => {
+test("Test search should just show item b", async () => {
   const wrapper = render(<App />);
   const input = wrapper.getByTestId("searchbar-input-field");
   const searchButton = wrapper.getByTestId("searchbar-button");
@@ -13,7 +13,7 @@ test("Just show item b", async () => {
   expect(grid.children.length).toBe(1);
 });
 
-test("test search is not case sensitive", async () => {
+test("Test search is not case sensitive", async () => {
   const wrapper = render(<App />);
   const input = wrapper.getByTestId("searchbar-input-field");
   const searchButton = wrapper.getByTestId("searchbar-button");
@@ -23,7 +23,7 @@ test("test search is not case sensitive", async () => {
   expect(grid.children.length).toBe(1);
 });
 
-test("No items should shown when seaching 'show nothing'", async () => {
+test("No items should be shown when searching 'show nothing'", async () => {
   const wrapper = render(<App />);
   const input = wrapper.getByTestId("searchbar-input-field");
   const searchButton = wrapper.getByTestId("searchbar-button");
@@ -33,7 +33,7 @@ test("No items should shown when seaching 'show nothing'", async () => {
   expect(grid.children.length).toBe(0);
 });
 
-test("All items should shown when seaching 'item'", async () => {
+test("All items should be shown when searching 'item'", async () => {
   const wrapper = render(<App />);
   const input = wrapper.getByTestId("searchbar-input-field");
   const searchButton = wrapper.getByTestId("searchbar-button");
