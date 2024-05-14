@@ -12,7 +12,7 @@ type CellProps = {
 
 function Grid({ cells }: GridProps) {
   return (
-    <div className="d-flex row flex-wrap px-2" data-testid="grid">
+    <div className="d-flex row" data-testid="grid">
       {cells.map((cell, index) => {
         return <Cell name={cell.name} price={cell.price} key={index} />;
       })}
@@ -22,13 +22,15 @@ function Grid({ cells }: GridProps) {
 
 function Cell({ name, price }: CellProps) {
   return (
+    <div className="col-md-4 col-sm-6 col-xs-12">
     <Card
-      className="col-md-5 d-flex flex-column m-1 p-2 align-items-center"
+      className="d-flex flex-column m-1 p-2 align-items-center"
       data-testid={`cell-${name.toLowerCase().replace(/ /g, "-")}`}
     >
       <Card.Title>{name}</Card.Title>
       <Card.Text>{`£${price}`}</Card.Text>
     </Card>
+    </div>
   );
 }
 

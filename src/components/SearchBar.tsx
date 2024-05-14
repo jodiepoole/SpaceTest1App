@@ -11,7 +11,7 @@ function SearchBar({
   handleSearch,
 }: SearchBarProps) {
   return (
-    <div className="search-bar-container d-flex border border-black mx-3">
+    <div className="search-bar-container d-flex justify-content-evenly bg-white">
       <input
         className="inner-searchbar bg-white px-2"
         placeholder="Search..."

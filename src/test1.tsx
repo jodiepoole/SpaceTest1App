@@ -49,14 +49,12 @@ const Test = () => {
   }
 
   return (
-    <div className="m-3 p-3">
-      <div className="d-flex align-items-center my-2">
+    <div className="p-3 p-3">
+      <div className="d-flex flex-wrap align-items-center mx-1 my-2">
         <FilterDropdown
-          data-testid="filter-dropdown"
           handleSelect={handleDropdownSelect}
         />
         <SearchBar
-          data-testid="search-bar"
           handleSearch={handleSearch}
         />
       </div>

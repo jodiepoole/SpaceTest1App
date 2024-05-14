@@ -1,8 +1,10 @@
 .search-bar-container {
-  width: fit-content;
+  max-width: 15rem;
+  flex-shrink: 1;
 }
 
 .inner-searchbar {
+  width: 75%;
   border: 0 !important;
   &:focus {
     outline: none;
