@@ -4,14 +4,10 @@ import { ReactComponent as SearchIcon } from "../icons/search.svg";
 import "../styling/searchBar.scss";
 
 type SearchBarProps = {
-  searchTerm: string;
-  setSearchTerm: (searchTerm: string) => void;
   handleSearch: (searchTerm: string) => void;
 };
 
 function SearchBar({
-  searchTerm,
-  setSearchTerm,
   handleSearch,
 }: SearchBarProps) {
   return (

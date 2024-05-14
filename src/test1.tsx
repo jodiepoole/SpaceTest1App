@@ -57,8 +57,6 @@ const Test = () => {
         />
         <SearchBar
           data-testid="search-bar"
-          searchTerm={searchTerm}
-          setSearchTerm={setSearchTerm}
           handleSearch={handleSearch}
         />
       </div>

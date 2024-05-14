@@ -11,13 +11,12 @@ function FilterDropdown({ handleSelect }: FilterProps) {
       onSelect={function (evt) {
         handleSelect(evt);
       }}
-      data-testid="dropdown-select"
       className="py-1"
     >
       <Dropdown.Toggle data-testid="dropdown-toggle">
         Filter By...
       </Dropdown.Toggle>
-      <Dropdown.Menu data-testid="dropdown-options">
+      <Dropdown.Menu>
         <Dropdown.Item eventKey="0" data-testid="dropdown-option-0">
           Show 5 Cheapest
         </Dropdown.Item>
