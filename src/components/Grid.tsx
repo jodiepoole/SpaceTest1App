@@ -22,7 +22,10 @@ function Grid({ cells }: GridProps) {
 
 function Cell({ name, price }: CellProps) {
   return (
-    <Card className="col-md-5 d-flex flex-column m-1 p-2 align-items-center">
+    <Card
+      className="col-md-5 d-flex flex-column m-1 p-2 align-items-center"
+      data-testid={`cell-${name.toLowerCase().replace(/ /g, "-")}`}
+    >
       <Card.Title>{name}</Card.Title>
       <Card.Text>{`£${price}`}</Card.Text>
     </Card>

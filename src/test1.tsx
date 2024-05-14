@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Grid from "./components/grid.tsx";
-import FilterDropdown from "./components/filterDropdown.tsx";
-import SearchBar from "./components/searchBar.tsx";
+import Grid from "./components/Grid.tsx";
+import FilterDropdown from "./components/FilterDropdown.tsx";
+import SearchBar from "./components/SearchBar.tsx";
 
 const data = [
   { name: "Item A", price: 125 },
