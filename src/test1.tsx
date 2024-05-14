@@ -39,7 +39,6 @@ const Test = () => {
     else setCells(applyFilter(data));
   }
 
-  //Handles search on button press or enter within the input field. Resets cells in case of mutiple searchs in a row.
   async function handleSearch(searchTerm: string) {
     if (filterIndex === "0") {
       setCells(
