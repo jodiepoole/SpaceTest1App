@@ -23,6 +23,14 @@ describe("space tests", () => {
     expect(wrapper.getByTestId("grid").childElementCount).toBe(numberOfEntries);
   }
 
+  function expectCellVisible(cell: string) {
+    expect(wrapper.queryByTestId(`cell-item-${cell}`)).toBeVisible();
+  }
+
+  function expectCellNull(cell: string) {
+    expect(wrapper.queryByTestId(`cell-item-${cell}`)).toBeNull();
+  }
+
   beforeEach(() => {
     wrapper = render(<App />);
   });
@@ -56,8 +64,8 @@ describe("space tests", () => {
     expectGridEntries(8);
     await selectFromDropdown(0);
     expectGridEntries(5);
-    expect(wrapper.queryByTestId("cell-item-h")).toBeNull();
-    expect(wrapper.getByTestId("cell-item-a")).toBeVisible();
+    expectCellNull("h");
+    expectCellVisible("a");
   });
 
   test("Dropdown filter options and search should change number of entries shown", async () => {
@@ -65,8 +73,8 @@ describe("space tests", () => {
     expectGridEntries(8);
     useSearchbar("H");
     expectGridEntries(1);
-    expect(wrapper.getByTestId("cell-item-h")).toBeVisible();
-    expect(wrapper.queryByTestId("cell-item-a")).toBeNull();
+    expectCellVisible("h");
+    expectCellNull("a");
   });
 
   test("Dropdown filter options and search should show nothing if no items match criteria", async () => {
@@ -75,7 +83,7 @@ describe("space tests", () => {
     useSearchbar("H");
     await selectFromDropdown(0);
     expectGridEntries(0);
-    expect(wrapper.queryByTestId("cell-item-h")).toBeNull();
-    expect(wrapper.queryByTestId("cell-item-a")).toBeNull();
+    expectCellNull("h");
+    expectCellNull("a");
   });
 });
