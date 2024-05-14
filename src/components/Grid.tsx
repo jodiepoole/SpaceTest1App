@@ -12,7 +12,7 @@ type CellProps = {
 
 function Grid({ cells }: GridProps) {
   return (
-    <div className="d-flex row flex-wrap p-2" data-testid="grid">
+    <div className="d-flex row flex-wrap px-2" data-testid="grid">
       {cells.map((cell, index) => {
         return <Cell name={cell.name} price={cell.price} key={index} />;
       })}

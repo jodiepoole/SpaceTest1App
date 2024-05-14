@@ -53,7 +53,7 @@ const Test = () => {
 
   return (
     <div className="m-3 p-3">
-      <div>
+      <div className="d-flex align-items-center my-2">
         <FilterDropdown
           data-testid="filter-dropdown"
           handleSelect={handleDropdownSelect}

@@ -4,7 +4,7 @@ import { render, act, fireEvent } from "@testing-library/react";
 import App from "../Test1";
 
 describe("space tests", () => {
-  let wrapper;
+  let wrapper = null;
 
   function useSearchbar(searchTerm: string) {
     fireEvent.change(wrapper.getByTestId("searchbar-input-field"), {
@@ -26,6 +26,10 @@ describe("space tests", () => {
 
   beforeEach(() => {
     wrapper = render(<App />);
+  });
+
+  afterAll(() => {
+    wrapper = null;
   });
 
   test("Test search should just show item b", async () => {

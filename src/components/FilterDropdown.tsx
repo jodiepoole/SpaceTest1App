@@ -12,6 +12,7 @@ function FilterDropdown({ handleSelect }: FilterProps) {
         handleSelect(evt);
       }}
       data-testid="dropdown-select"
+      className="py-1"
     >
       <Dropdown.Toggle data-testid="dropdown-toggle">
         Filter By...

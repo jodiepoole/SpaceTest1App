@@ -9,7 +9,6 @@
     "@types/node": "^20.12.11",
     "@types/react-bootstrap": "^0.32.36",
     "bootstrap": "^5.3.3",
-    "prettier": "^3.2.5",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.3.1",
@@ -26,7 +25,8 @@
     "start": "react-scripts start",
     "test": "react-scripts test src/tests",
     "build": "react-scripts build",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prettier": "npx prettier . --write"
   },
   "eslintConfig": {
     "extends": [
@@ -49,6 +49,7 @@
   "devDependencies": {
     "@testing-library/react": "^15.0.7",
     "@types/react": "^18.3.2",
-    "@types/react-dom": "^18.3.0"
+    "@types/react-dom": "^18.3.0",
+    "prettier": "3.2.5"
   }
 }

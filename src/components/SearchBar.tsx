@@ -15,9 +15,9 @@ function SearchBar({
   handleSearch,
 }: SearchBarProps) {
   return (
-    <div className="search-bar-container d-flex border border-black my-2">
+    <div className="search-bar-container d-flex border border-black mx-3">
       <input
-        className="bg-white"
+        className="inner-searchbar bg-white px-2"
         placeholder="Search..."
         onChange={(e) => setSearchTerm(e.target.value.toLowerCase())}
         onKeyDown={(event) => {
