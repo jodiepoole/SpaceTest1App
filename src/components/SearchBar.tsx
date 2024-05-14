@@ -19,21 +19,10 @@ function SearchBar({
       <input
         className="inner-searchbar bg-white px-2"
         placeholder="Search..."
-        onChange={(e) => setSearchTerm(e.target.value.toLowerCase())}
-        onKeyDown={(event) => {
-          if (event.key === "Enter") {
-            handleSearch(searchTerm);
-          }
-        }}
+        onChange={(e) => handleSearch(e.target.value.toLowerCase())}
         data-testid="searchbar-input-field"
       />
-      <Button
-        className="bg-white border-0"
-        onClick={(e) => handleSearch(searchTerm)}
-        data-testid="searchbar-button"
-      >
-        <SearchIcon className="d-flex align-self-center" />
-      </Button>
+      <SearchIcon className="d-flex align-self-center m-2" />
     </div>
   );
 }

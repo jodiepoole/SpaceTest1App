@@ -10,7 +10,6 @@ describe("space tests", () => {
     fireEvent.change(wrapper.getByTestId("searchbar-input-field"), {
       target: { value: searchTerm },
     });
-    fireEvent.click(wrapper.getByTestId("searchbar-button"));
   }
 
   async function selectFromDropdown(id: number) {
