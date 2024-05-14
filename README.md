@@ -6,7 +6,7 @@ Requires NodeJS - https://nodejs.org/en/
 
 1. Clone or download the repository
 
-2. Open repository in terminal
+2. Open root folder of repository in terminal
 
 3. Run the following command: `npm install`
 
@@ -20,6 +20,6 @@ Tested on Chrome, Firefox & Microsoft Edge
 
 ## To Test:
 
-1. Open repository in terminal
+1. Open root folder of repository in terminal
 
 2. Run the following command: `npm test`
