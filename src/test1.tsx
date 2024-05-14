@@ -25,8 +25,8 @@ const Test = () => {
   const [filterIndex, setFilterIndex] = useState("0");
   const [searchTerm, setSearchTerm] = useState("");
 
-  function applyFilter(items: any[]) {
-    return items.filter((o) => o.name.toLowerCase().includes(searchTerm));
+  function applyFilter(items: any[], filter: string = searchTerm) {
+    return items.filter((o) => o.name.toLowerCase().includes(filter));
   }
 
   async function handleDropdownSelect(eventKey: string | null) {
@@ -39,15 +39,13 @@ const Test = () => {
     else setCells(applyFilter(data));
   }
 
-  async function handleSearch(searchTerm: string) {
+  async function handleSearch(searchTermInput: string) {
+    setSearchTerm(searchTermInput);
     if (filterIndex === "0") {
-      setCells(
-        dataByPrice.filter((o) => o.name.toLowerCase().includes(searchTerm)),
-      );
+      setCells(applyFilter(dataByPrice, searchTermInput));
     } else {
-      setCells(data.filter((o) => o.name.toLowerCase().includes(searchTerm)));
+      setCells(applyFilter(data, searchTermInput));
     }
-    setSearchTerm(searchTerm);
   }
 
   return (
