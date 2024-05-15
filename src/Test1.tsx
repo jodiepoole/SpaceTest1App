@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Grid from "./components/Grid.tsx";
 import FilterDropdown from "./components/FilterDropdown.tsx";
 import SearchBar from "./components/SearchBar.tsx";
@@ -25,38 +25,36 @@ const Test = () => {
   const [filterIndex, setFilterIndex] = useState("0");
   const [searchTerm, setSearchTerm] = useState("");
 
-  function applyFilter(items: any[], filter: string) {
-    return items.filter((o) => o.name.toLowerCase().includes(filter));
+  function applyFilter(items: any[]) {
+    return items.filter((o) => o.name.toLowerCase().includes(searchTerm));
   }
 
-  function updateCells(index: string = filterIndex, filter: string = searchTerm) {
-    if (index === "0") setCells(applyFilter(dataByPrice, filter));
-    else setCells(applyFilter(data, filter));
+  function updateCells() {
+    if (filterIndex === "0") setCells(applyFilter(dataByPrice));
+    else setCells(applyFilter(data));
   }
+
+  useEffect(() => {
+    updateCells();
+  }, [filterIndex, searchTerm]);
 
   async function handleDropdownSelect(eventKey: string | null) {
     if (eventKey === null) {
       //error
       return;
     }
-    updateCells(eventKey);
     setFilterIndex(eventKey);
   }
 
   async function handleSearch(searchTermInput: string) {
-    updateCells(filterIndex, searchTermInput);
     setSearchTerm(searchTermInput);
   }
 
   return (
     <div className="p-3 p-3">
       <div className="d-flex flex-wrap align-items-center mx-1 my-2">
-        <FilterDropdown
-          handleSelect={handleDropdownSelect}
-        />
-        <SearchBar
-          handleSearch={handleSearch}
-        />
+        <FilterDropdown handleSelect={handleDropdownSelect} />
+        <SearchBar handleSearch={handleSearch} />
       </div>
       <Grid cells={cells} />
     </div>
